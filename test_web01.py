@@ -17,4 +17,5 @@ def test_web1():
         # page.goto("https://dateandage.com/date/how-long-july-8-2021")
         # head = page.query_selector('[id="time"]')
         print(pagetitle)
+        print("yeah motherfucker") 
         browser.close()
