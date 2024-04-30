@@ -5,17 +5,14 @@ def test_web1():
     with sync_playwright() as p:
         browser = p.chromium.launch()
         page = browser.new_page()
-        page.goto("https://vshkodin.com/")
-        pagetitle = page.title()
-        assert "Vladimir Shkodin" == page.title()
-        # page.fill("locator", "text")
-        # page.click("locator")
-        # time.sleep(5)
-        # page.screenshot(path="screenshot.png")
-        # head = page.query_selector("div[class='rows text-center'] h1");
-        # print(head.inner_html(), str(currentDT))
-        # page.goto("https://dateandage.com/date/how-long-july-8-2021")
-        # head = page.query_selector('[id="time"]')
-        print(pagetitle)
+        page.goto("https://supabets.co.za")
+
+        # Wait for the soccer tab to appear and click on it
+        page.wait_for_selector('div[title="SOCCER"]').click()
+        time.sleep(5)
+        # Wait for the subEvents to load and count the number of games
+        sub_events = page.query_selector_all('.subEvent')
+        num_games = len(sub_events)
+        print(f"Number of games found: {num_games}")
         print("yeah motherfucker") 
         browser.close()
