@@ -1,5 +1,6 @@
 from playwright.sync_api import sync_playwright
 import time
+import pandas as pd
 
 
 def test_web1():
