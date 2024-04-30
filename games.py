@@ -1,4 +1,5 @@
 from playwright.sync_api import sync_playwright
+import time
 
 def count_games():
     with sync_playwright() as p:
@@ -8,7 +9,7 @@ def count_games():
 
         # Wait for the soccer tab to appear and click on it
         page.wait_for_selector('div[title="SOCCER"]').click()
-
+        time.sleep(5)
         # Wait for the subEvents to load and count the number of games
         sub_events = page.query_selector_all('.subEvent')
         num_games = len(sub_events)
