@@ -13,7 +13,21 @@ def test_web1():
         time.sleep(5)
         # Wait for the subEvents to load and count the number of games
         sub_events = page.query_selector_all('.subEvent')
-        num_games = len(sub_events)
-        print(f"Number of games found: {num_games}")
+        team_home = page.query_selector('.plr_1').inner_text()
+        team_away = page.query_selector('.plr_2').inner_text()
+        odds = page.query_selector_all('.oddValue')
+        odds_values = [odd.inner_text() for odd in odds[:3]]  # Extracting only the first three odds
+
+        # Create DataFrame
+        data = {'Team': [team_home, team_away], 'HomeDrawAway Odds': odds_values}
+        df = pd.DataFrame(data)
+
+        df
+        print(team_home)
+        print(odds[0])
+        print(team_away)
+        print(odds[1])
+        print("draw")
+        print(odds[2])
         print("yeah motherfucker") 
         browser.close()
