@@ -1,6 +1,5 @@
 from playwright.sync_api import sync_playwright
 import time
-import pandas as pd
 
 
 def test_web1():
@@ -18,17 +17,14 @@ def test_web1():
         team_away = page.query_selector('.plr_2').inner_text()
         odds = page.query_selector_all('.oddValue')
         odds_values = [odd.inner_text() for odd in odds[:3]]  # Extracting only the first three odds
-
-        # Create DataFrame
-        data = {'Team': [team_home, team_away], 'HomeDrawAway Odds': odds_values}
-        df = pd.DataFrame(data)
-
-        df
         print(team_home)
         print(odds[0])
+        print(" ")
         print(team_away)
         print(odds[1])
+        print(" ")
         print("draw")
         print(odds[2])
+        print(" ")
         print("yeah motherfucker") 
         browser.close()
