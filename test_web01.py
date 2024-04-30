@@ -6,7 +6,7 @@ def test_web1():
         browser = p.chromium.launch()
         page = browser.new_page()
         page.goto("https://vshkodin.com/")
-        pagetitle == page.title()
+        pagetitle = page.title()
         assert "Vladimir Shkodin" == page.title()
         # page.fill("locator", "text")
         # page.click("locator")
