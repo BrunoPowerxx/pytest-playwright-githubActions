@@ -17,14 +17,18 @@ def test_web1():
         team_away = page.query_selector('.plr_2').inner_text()
         odds = page.query_selector_all('.oddValue')
         odds_values = [odd.inner_text() for odd in odds[:3]]  # Extracting only the first three odds
+        odd_home = odds_values[0]
+        odd_draw = odds_values[1]
+        odd_away = odds_values[2]
+
         print(team_home)
-        print(odds[0])
+        print(odd_home)
         print(" ")
         print(team_away)
-        print(odds[1])
+        print(odd_away)
         print(" ")
         print("draw")
-        print(odds[2])
+        print(odd_draw)
         print(" ")
         print("yeah motherfucker") 
         browser.close()
