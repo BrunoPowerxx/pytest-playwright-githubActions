@@ -32,7 +32,7 @@ def test_plr1():
        # c1 = event1.inner_text  # Removed parentheses
        # c2 = event2.inner_text
        # c3 = event3.inner_text
-        c4 = event4.inner_text
+      #  c4 = event4.inner_text
         
       #  print(c1)
        # print(c2)
