@@ -36,9 +36,9 @@ def test_web1():
         away_two = away_names[1]
         away_three = away_names[2]
 
-        odd_home = odds_values[0]
-        odd_draw = odds_values[1]
-        odd_away = odds_values[2]
+        odd_home = odds_values[3]
+        odd_draw = odds_values[6]
+        odd_away = odds_values[9]
 
 
 
@@ -55,6 +55,10 @@ def test_web1():
         print(home_three)
         print(" v ")
         print(away_three)
+
+        print(odd_home)
+        print(odd_draw)
+        print(odd_away)
         
         print(" ")
         print("yeah motherfucker")
