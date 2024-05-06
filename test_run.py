@@ -24,7 +24,7 @@ def test_web1():
         home_names =  [home_team.inner_text() for home_team in home_teams[:3]]
         away_names =  [away_team.inner_text() for away_team in away_teams[:3]]
 
-        odds_values = [odd.inner_text() for odd in odds[:3]]  # Extracting only the first three odds
+        odds_values = [odd.inner_text() for odd in odds[:11]]  # Extracting only the first ten odds
 
 
 
