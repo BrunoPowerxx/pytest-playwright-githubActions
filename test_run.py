@@ -43,12 +43,19 @@ def test_web1():
 
 
         print(home_one)
-        print(home_two)
-        print(home_three)
+        print(" v ")
         print(away_one)
-        print(away_two)
-        print(away_three)
+        print(" ")
 
+        print(home_two)
+        print(" v ")
+        print(away_two)
+        print(" ")
+
+        print(home_three)
+        print(" v ")
+        print(away_three)
+        
         print(" ")
         print("yeah motherfucker")
 
