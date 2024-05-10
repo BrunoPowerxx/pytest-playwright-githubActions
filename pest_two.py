@@ -1,6 +1,7 @@
-import pytest
 from playwright.sync_api import sync_playwright
 import time
+from thefuzz import fuzz
+from thefuzz import process
 
 def test_web1():
     with sync_playwright() as p:
@@ -8,27 +9,67 @@ def test_web1():
         browser = p.chromium.launch()
         page = browser.new_page()
         page.goto("https://supabets.co.za")
-        time.sleep(5)  # Wait for 5 seconds
-
-    # Click on the soccer option
         page.wait_for_selector('div[title="SOCCER"]').click()
-        time.sleep(5)  # Wait for 5 seconds
+        time.sleep(5)
 
-    # Get and print home team text content
-        home_team = page.query_selector('.plr_1')
-        print("Home Team:", home_team.inner_text())
+        
+        sub_events = page.query_selector_all('.subEvent')
 
-    # Click on the home team
-        home_team.click()
-        time.sleep(5)  # Wait for 5 seconds
+        home_teams = page.query_selector_all('.plr_1')
+        away_teams = page.query_selector_all('.plr_2')
 
-    # Wait for the back button to appear
-        page.wait_for_selector('span.btnBack')
-        print("Back button text:", page.query_selector('span.btnBack').inner_text())
+        odds = page.query_selector_all('.oddValue')
 
-    # Click on the back button
-        page.click('span.btnBack')
-        time.sleep(5)  # Wait for 5 seconds
 
-    # Print content of the soccer option button again
-        print("Content of the soccer option button:", page.query_selector('div[title="SOCCER"]').inner_text())
+
+        home_names =  [home_team.inner_text() for home_team in home_teams[:3]]
+        away_names =  [away_team.inner_text() for away_team in away_teams[:3]]
+
+        odds_values = [odd.inner_text() for odd in odds[:11]]  # Extracting only the first ten odds
+
+
+
+        home_one = home_names[0]
+        #home_two = home_names[1]
+        #home_three = home_names[2]
+
+        away_one = away_names[0]
+        #away_two = away_names[1]
+        #away_three = away_names[2]
+
+        odd_home = odds_values[0]
+        odd_draw = odds_values[1]
+        odd_away = odds_values[2]
+        
+
+        game_one = home_one + " v " + away_one
+        #game_two = home_two + " v " + away_two
+        #game_three = home_three + " v " + away_three
+
+        games = {'eventId': game_one, 'home': odd_home, 'draw': odd_draw, 'away': odd_away}
+
+        str1 = game_one
+        str2 = "Augsburg vs Stuttgart"
+        if fuzz.ratio(str1, str2) > 80:
+          print("Strings are similar")
+        else:
+          print("Strings are not similar")
+        
+        print(" ")
+        print("yeah motherfucker")
+
+        browser.close()
+
+
+#FC Augsburg v VfB Stuttgart
+
+# Assume str1 and str2 are the strings to be compared
+# str1 = game_one
+# str2 = "Augsburg vs Stuttgart"
+
+# Example of using fuzzywuzzy within a guarded clause
+#if fuzz.ratio(str1, str2) > 80:
+#    print("Strings are similar")
+#else:
+#    print("Strings are not similar")
+
