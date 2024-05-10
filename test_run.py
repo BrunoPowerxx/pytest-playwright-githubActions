@@ -48,7 +48,7 @@ def test_web1():
         games = {'eventId': game_one, 'home': odd_home, 'draw': odd_draw, 'away': odd_away}
 
 
-        print(games)
+        print(game_one)
         
         print(" ")
         print("yeah motherfucker")
