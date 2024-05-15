@@ -30,26 +30,15 @@ def test_web1():
 
 
         home_one = home_names[0]
-        #home_two = home_names[1]
-        #home_three = home_names[2]
-
+        home_two = home_names[1]
         away_one = away_names[0]
-        #away_two = away_names[1]
-        #away_three = away_names[2]
-
-        odd_home = odds_values[0]
-        odd_draw = odds_values[1]
-        odd_away = odds_values[2]
-        
-
+        away_two = away_names[1]
         game_one = home_one + " v " + away_one
-        #game_two = home_two + " v " + away_two
-        #game_three = home_three + " v " + away_three
-
-        games = {'eventId': game_one, 'home': odd_home, 'draw': odd_draw, 'away': odd_away}
+        game_two = home_two + " v " + away_two
+        #games = {'eventId': game_one, 'home': odd_home, 'draw': odd_draw, 'away': odd_away}
 
         str1 = game_one
-        str2 = "Augsburg vs Stuttgart"
+        str2 = game_two
         if fuzz.ratio(str1, str2) > 80:
           print("Strings are similar")
         else:
