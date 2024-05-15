@@ -39,10 +39,11 @@ def test_web1():
 
         str1 = game_one
         str2 = game_two
-        if fuzz.ratio(str1, str2) > 80:
-          print("Strings are similar")
-        else:
-          print("Strings are not similar")
+        #if fuzz.ratio(str1, str2) > 80:
+         # print("Strings are similar")
+        #else:
+        print(str1)
+        print(str2)
         
         print(" ")
         print("yeah motherfucker")
