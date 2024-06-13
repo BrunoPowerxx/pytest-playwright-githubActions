@@ -15,37 +15,41 @@ def test_web1():
         
         sub_events = page.query_selector_all('.subEvent')
 
-        home_teams = page.query_selector_all('.plr_1')
-        away_teams = page.query_selector_all('.plr_2')
+        home_team = page.query_selector('.plr_1')
+        away_team = page.query_selector('.plr_2')
 
-        odds = page.query_selector_all('.oddValue')
-
-
-
-        home_names =  [home_team.inner_text() for home_team in home_teams[:3]]
-        away_names =  [away_team.inner_text() for away_team in away_teams[:3]]
-
-        odds_values = [odd.inner_text() for odd in odds[:11]]  # Extracting only the first ten odds
+        h2h_1 = page.query_selector(
+            "//div[@class='oddType' and contains(text(), 'Home')]
+)
+        print(home_win)
+        print(h2h_1)
 
 
+   
+       # home_names =  [home_team.inner_text() for home_team in home_teams[:3]]
+      #  away_names =  [away_team.inner_text() for away_team in away_teams[:3]]
 
-        home_one = home_names[0]
-        home_two = home_names[1]
-        away_one = away_names[0]
-        away_two = away_names[1]
-        game_one = home_one + " v " + away_one
-        game_two = home_two + " v " + away_two
+       # odds_values = [odd.inner_text() for odd in odds[:11]]  # Extracting only the first ten odds
+
+
+
+      #  home_one = home_names[0]
+      #  home_two = home_names[1]
+     #   away_one = away_names[0]
+     #   away_two = away_names[1]
+      #  game_one = home_one + " v " + away_one
+      #  game_two = home_two + " v " + away_two
         #games = {'eventId': game_one, 'home': odd_home, 'draw': odd_draw, 'away': odd_away}
 
-        str1 = game_one
-        str2 = game_two
-        if fuzz.ratio(str1, str2) > 80:
-            print("Strings are similar")
-        else: 
-            print("Strings don't match")
+      #  str1 = game_one
+     #   str2 = game_two
+     #   if fuzz.ratio(str1, str2) > 80:
+      #      print("Strings are similar")
+     #   else: 
+     #       print("Strings don't match")
         
-        print(" ")
-        print("yeah motherfucker")
+      #  print(" ")
+      #  print("yeah motherfucker")
 
         browser.close()
 
