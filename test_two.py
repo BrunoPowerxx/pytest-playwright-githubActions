@@ -12,7 +12,7 @@ def test_web1():
         page = browser.new_page()
         page.goto(bw_basket)
         time.sleep(5)
-        page.locator(event_tile).click
+        page.locator(event_title).click
         time.sleep(5)
         odd_t = page.query_selector(types)
         odd_v = page.query_selector(values)
