@@ -19,6 +19,6 @@ def test_web1(): with sync_playwright() as p:
     value = odd_v.inner_text()
     print(type)
     print(value)
-    print("yeah motherfucker")
+    print("yeah motherfucker!!")
 
     browser.close()
