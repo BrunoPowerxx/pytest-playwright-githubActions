@@ -3,8 +3,8 @@ import time
 
 bw_basket = "https://betway.co.za/sport/basketball"
 event_title = "//div[@data-eventtile='Brazil']"
-types = "//div[ contains(@data-translate-market)]"
-values = "//div[ contains(@data-pd)]"
+types = "//div[@data-translate-market='Winner']"
+values = "//div[@class='outcome-pricedecimal']"
 
 def test_web1():
     with sync_playwright() as p:
