@@ -14,8 +14,8 @@ def test_web1():
         time.sleep(5)
         page.locator(event_title).click
         time.sleep(5)
-        odd_t = page.query_selector(types)
-        odd_v = page.query_selector(values)
+        odd_t = page.locator(types)
+        odd_v = page.locator(values)
         type = odd_t.inner_text()
         value = odd_v.inner_text()
         print(type)
