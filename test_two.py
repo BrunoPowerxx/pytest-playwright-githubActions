@@ -54,15 +54,16 @@ def test_web1():
         time.sleep(3)
         highlights.click()
         time.sleep(3)
+        event.click()
         qtrs.click()
         time.sleep(3)
         qoe_1.click()
         time.sleep(3)
-        game = page.locator(event)
+        
         
       #  for i in games:
-        game.click()
-        time.sleep(3)
+      #  game.click()
+      #  time.sleep(3)
             
         odd_t = page.locator(qoe1_ot)
         odd_v = page.locator(qoe1_ov)
