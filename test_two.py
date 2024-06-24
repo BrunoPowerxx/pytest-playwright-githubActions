@@ -2,7 +2,7 @@ from playwright.sync_api import sync_playwright
 import time
 
 bw_basket = "https://betway.co.za/sport/basketball"
-event_title = "//div[@data-eventtile='Brazil']"
+event_title = "//div[@data-eventtile='Brazil v Poland']"
 types = "//div[@data-translate-market='Winner']"
 values = "//div[@class='outcome-pricedecimal']"
 
@@ -12,11 +12,11 @@ def test_web1():
         page = browser.new_page()
         page.goto(bw_basket)
         time.sleep(5)
-        event = page.wait_for_selector(event_title, timeout=50000)
+        event = page.locator(event_title)
         event.click()
         time.sleep(5)
-        odd_t = page.wait_for_selector(types, timeout=50000)
-        odd_v = page.wait_for_selector(values, timeout=50000)
+        odd_t = page.locator(types)
+        odd_v = page.locator(values)
         type = odd_t.inner_text()
         value = odd_v.inner_text()
         print(type)
