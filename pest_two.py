@@ -8,8 +8,8 @@ def test_web1():
         
         browser = p.chromium.launch()
         page = browser.new_page()
-        page.goto("https://betway.co.za")
-        page.wait_for_selector('div[title="SOCCER"]').click()
+        page.goto("https://betway.co.za/sport/basketball")
+        
         time.sleep(5)
 
         
