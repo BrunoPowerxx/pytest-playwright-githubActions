@@ -14,26 +14,26 @@ highlights = "//button[@value='highlights']"
 event = "//label[@data-eventtitle='event']"
 
     #Basketball Highlights
-    qtrs = "//span[@data-translate-key='Quarters']"
-    qoe_1 = "//span[@data-translate-key='1StQuarterOddEven']"
-        qoe1_ot = "//span[@data-translate-market='1st Quarter - Odd/Even' and @data-translate-key='Odd']"
-        qoe1_ov = "//span[@data-translate-key='1StQuarterOddEven']"
+qtrs = "//span[@data-translate-key='Quarters']"
+qoe_1 = "//span[@data-translate-key='1StQuarterOddEven']"
+qoe1_ot = "//span[@data-translate-market='1st Quarter - Odd/Even' and @data-translate-key='Odd']"
+qoe1_ov = "//span[@data-translate-key='1StQuarterOddEven']"
      #   qoe1_et =
       #  qoe1_ev =
       #  qoe1_ov =
       #  qoe1_et =
       #  qoe1_ev =
-    qoe_2 = "//span[@data-translate-key='2NdQuarterOddEven']"
+qoe_2 = "//span[@data-translate-key='2NdQuarterOddEven']"
     #    qoe2_ot =
      #   qoe2_ov =
       #  qoe2_et =
        # qoe2_ev =
-    qoe_3 = "//span[@data-translate-key='3RQuarterOddEven']"
+qoe_3 = "//span[@data-translate-key='3RQuarterOddEven']"
     #    qoe3_ot =
     #    qoe3_ov =
     #    qoe3_et =
     #    qoe3_ev =
-    qoe_4 = "//span[@data-translate-key='4ThQuarterOddEven']"
+qoe_4 = "//span[@data-translate-key='4ThQuarterOddEven']"
      #   qoe4_ot =
      #   qoe4_ov =
     #  qoe4_et =
