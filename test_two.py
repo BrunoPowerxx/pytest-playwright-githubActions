@@ -12,7 +12,8 @@ def test_web1():
         page = browser.new_page()
         page.goto(bw_basket)
         time.sleep(5)
-        page.locator(event_title).click
+        event = page.wait_for_selector(event_title, timeout=50000)
+        event.click()
         time.sleep(5)
         odd_t = page.wait_for_selector(types, timeout=50000)
         odd_v = page.wait_for_selector(values, timeout=50000)
