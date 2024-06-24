@@ -1,10 +1,43 @@
 from playwright.sync_api import sync_playwright
 import time
 
+#General
 bw_basket = "https://betway.co.za/sport/basketball"
-event_title = "//label[@data-eventtitle='Brazil v Poland']"
-types = "//div[@data-translate-market='Winner']"
-values = "//div[@class='outcome-pricedecimal']"
+sport = "//div[@id='navbar_sport']"
+
+#Soccer
+soccer = "//p[@data-translate-key='Soccer']"
+
+#Basketball
+basket = "//p[@data-translate-key='Basketball']"
+highlights = "//button[@value='highlights']"
+event = "//label[@data-eventtitle='event']"
+
+    #Basketball Highlights
+    qtrs = "//span[@data-translate-key='Quarters']"
+    qoe_1 = "//span[@data-translate-key='1StQuarterOddEven']"
+        qoe1_ot =
+        qoe1_ov =
+        qoe1_et =
+        qoe1_ev =
+    qoe_2 = "//span[@data-translate-key='2NdQuarterOddEven']"
+        qoe2_ot =
+        qoe2_ov =
+        qoe2_et =
+        qoe2_ev =
+    qoe_3 = "//span[@data-translate-key='3RQuarterOddEven']"
+        qoe3_ot =
+        qoe3_ov =
+        qoe3_et =
+        qoe3_ev =
+    qoe_4 = "//span[@data-translate-key='4ThQuarterOddEven']"
+        qoe4_ot =
+        qoe4_ov =
+        qoe4_et =
+        qoe4_ev =
+
+        types = "//div[@data-translate-market='Winner']"
+        values = "//div[@class='outcome-pricedecimal']"
 
 def test_web1():
     with sync_playwright() as p:
@@ -12,13 +45,17 @@ def test_web1():
         page = browser.new_page()
         page.goto(bw_basket)
         time.sleep(5)
-        event = page.locator(event_title)
-        event.click()
-        time.sleep(5)
-        odd_t = page.locator(types)
-        odd_v = page.locator(values)
-        type = odd_t.inner_text()
-        value = odd_v.inner_text()
+        games = page.query_selector_all(event)
+        
+        for i in games:
+            games.click()
+            time.sleep(5)
+            quarters = {'1
+            odd_t = page.locator(types)
+            odd_v = page.locator(values)
+            type = odd_t.inner_text()
+            value = odd_v.inner_text()
+            
         print(type)
         print(value)
         print("yeah motherfucker!!")
