@@ -48,7 +48,7 @@ def test_web1():
         page = browser.new_page()
         page.goto(bw_basket)
         time.sleep(3)
-        sports.click()
+        sport.click()
         time.sleep(3)
         basket.click()
         time.sleep(3)
