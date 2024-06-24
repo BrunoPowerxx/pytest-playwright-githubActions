@@ -2,7 +2,7 @@ from playwright.sync_api import sync_playwright
 import time
 
 bw_basket = "https://betway.co.za/sport/basketball"
-event_title = "//div[@data-eventtile='Brazil v Poland']"
+event_title = "//label[@data-eventtile='Brazil v Poland']"
 types = "//div[@data-translate-market='Winner']"
 values = "//div[@class='outcome-pricedecimal']"
 
