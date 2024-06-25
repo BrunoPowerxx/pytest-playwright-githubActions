@@ -27,7 +27,7 @@ qoe_1 = "//span[@data-translate-key='1StQuarterOddEven']"
 qoe1_ot = "//span[@data-translate-key='1StQuarterOddEven']//span[data-translate-key='Odd']"
 qoe1_v = "//span[@data-translate-key='1StQuarterOddEven']//div[@class='outcome-pricedecimal']"
 
-qoe1_et = "//span[@data-translate-key='1StQuarterOddEven']//span[data-translate-key='Even']"
+#qoe1_et = "//span[@data-translate-key='1StQuarterOddEven']/span[data-translate-key='Even']"
 #qoe1_ev = "//span[@data-translate-key='1StQuarterOddEven']//div[@class='outcome-pricedecimal'][2]"
 
 #    qoe_2 = "//span[@data-translate-key='2NdQuarterOddEven']"
@@ -70,7 +70,7 @@ def test_web1():
         time.sleep(3)
         #page.locator(qoe_1).click()
         #time.sleep(3)
-        qoe1_vs = page.locator(qoe1_v)
+        qoe1_vs = page.locator_all(qoe1_v)
         qoe1_ov = qoe1_vs.nth(0)
         qoe1_ev = qoe1_vs.nth(1)
         qoe1_odd_value = qoe1_ov.inner_text()
