@@ -22,7 +22,7 @@ qoe1_ot = "//span[@data-translate-market='1st Quarter - Odd/Even' and @data-tran
 qoe1_ov = "div.outcome-title.doublechance > span[data-translate-market='1st Quarter - Odd/Even'][data-translate-key='Odd'] ~ div.outcome-pricedecimal"
     #1st Quarter  - Even
 qoe1_et = "//span[@data-translate-market='1st Quarter - Odd/Even' and @data-translate-key='Odd']"
-qoe_1_ev = "div.outcome-title.doublechance > span[data-translate-market='1st Quarter - Odd/Even'][data-translate-key='Even'] ~ div.outcome-pricedecimal"
+qoe1_ev = "div.outcome-title.doublechance > span[data-translate-market='1st Quarter - Odd/Even'][data-translate-key='Even'] ~ div.outcome-pricedecimal"
 
 #    qoe_2 = "//span[@data-translate-key='2NdQuarterOddEven']"
 #qoe2_ot =
