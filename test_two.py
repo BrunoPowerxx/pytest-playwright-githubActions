@@ -11,7 +11,7 @@ soccer = "//p[@data-translate-key='Soccer']"
 #Basketball
 basket = "//p[@data-translate-key='Basketball']"
 highlights = "//button[@value='highlights']"
-event = "//label[@data-eventtitle='event']"
+event = "//label[@data-translate-type='event' and @data-translate-set='Basketball']"
 
     #Basketball Highlights
 qtrs = "//span[@data-translate-key='Quarters']"
