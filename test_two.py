@@ -51,7 +51,7 @@ qoe1_ev = "//span[@data-translate-key='1StQuarterOddEven']//div[@class='outcome-
 
 def test_web1():
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False)
+        browser = p.chromium.launch()
         page = browser.new_page()
         page.goto(bw_basket)
         time.sleep(3)
