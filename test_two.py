@@ -81,7 +81,7 @@ def test_web1():
    #     }
         test = page.query_selector(testing)
         #for test in tests:
-        text = test inner_text()
+        text = test.inner_text()
         print(text)
         print("yeah motherfucker")
 
