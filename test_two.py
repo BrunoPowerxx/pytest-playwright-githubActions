@@ -25,7 +25,7 @@ qoe_1 = "//span[@data-translate-key='1StQuarterOddEven']"
 #qoe1_ev = "div.outcome-title.doublechance > span[data-translate-market='1st Quarter - Odd/Even'][data-translate-key='Even'] ~ div.outcome-pricedecimal"
 
 qoe1_ot = "//span[@data-translate-key='1StQuarterOddEven']//span[data-translate-key='Odd']"
-qoe1_v = "//span[@data-translate-key='1StQuarterOddEven']//div[@class='outcome-pricedecimal'][1]"
+qoe1_v = "//span[@data-translate-key='1StQuarterOddEven']//div[@class='outcome-pricedecimal']"
 
 qoe1_et = "//span[@data-translate-key='1StQuarterOddEven']//span[data-translate-key='Even']"
 #qoe1_ev = "//span[@data-translate-key='1StQuarterOddEven']//div[@class='outcome-pricedecimal'][2]"
