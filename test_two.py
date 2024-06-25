@@ -55,9 +55,9 @@ def test_web1():
         time.sleep(3)
         page.locator(highlights).click()
         time.sleep(3)
-        events = page.locator(event).locator_all()
+        events = page.locator(event)
         #quarters = []
-        events.first.click()
+        events.nth(0).click()
         
         time.sleep(3)
         page.locator(qtrs).click()
