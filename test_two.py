@@ -16,7 +16,7 @@ event = "//label[@data-translate-type='event' and @data-translate-set='Basketbal
     #Basketball Highlights
 qtrs = "//span[@data-translate-key='Quarters']"
     #1st Quarter
-#qoe_1 = "//span[@data-translate-key='1StQuarterOddEven']"
+qoe_1 = "//span[@data-translate-key='1StQuarterOddEven']"
     #1st Quarter - Odd
 #qoe1_ot = "//span[@data-translate-market='1st Quarter - Odd/Even' and @data-translate-key='Odd']"
 #qoe1_ov = "div.outcome-title.doublechance > span[data-translate-market='1st Quarter - Odd/Even'][data-translate-key='Odd'] ~ div.outcome-pricedecimal"
