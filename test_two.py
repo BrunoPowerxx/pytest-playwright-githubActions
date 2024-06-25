@@ -45,7 +45,7 @@ qoe1_ev = "div.outcome-title.doublechance > span[data-translate-market='1st Quar
 
 def test_web1():
     with sync_playwright() as p:
-        browser = p.chromium.launch()
+        browser = p.chromium.launch(headless=False)
         page = browser.new_page()
         page.goto(bw_basket)
         time.sleep(3)
