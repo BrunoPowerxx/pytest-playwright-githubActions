@@ -73,13 +73,12 @@ def test_web1():
         qoe1_vs = page.locator(qoe1_v)
         qoe1_ov = qoe1_vs.nth(0)
         qoe1_ev = qoe1_vs.nth(1)
-        qoe1_odd_value = page.locator(qoe1_ov)
-        qoe1_even_value = page.locator(qoe1_ev)
+        qoe1_odd_value = qoe1_ov.inner_text()
+        qoe1_even_value = qoe1_ev.inner_text()
         qoe1_odds = {
-            'Q1 Odd': qoe1_odd_value.inner_text(),
-            'Q1 Even': qoe1_even_value.inner_text()
+            'Q1 Odd': qoe1_odd_value,
+            'Q1 Even': qoe1_even_value
         }
-   
         print(qoe1_odds)
         print("yeah motherfucker!!")
 
