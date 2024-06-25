@@ -1,0 +1,25 @@
+# .github/workflows/test01.yaml
+name: test01
+on:
+  workflow_dispatch:  
+jobs:
+  test01:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out this repo
+        uses: actions/checkout@v2
+      # Setup Python
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+      - name: Install the necessary packages
+        run: pip install -r requirements.txt
+      - name: Install Playwright
+        run: playwright install
+      # Install Xvfb
+      - name: Install Xvfb
+        run: sudo apt-get install xvfb
+      # Run the PyTest script with Xvfb
+      - name: Run the PyTest script
+        run: xvfb-run pytest -vs
