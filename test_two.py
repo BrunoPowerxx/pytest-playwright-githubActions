@@ -71,8 +71,8 @@ def test_web1():
         #page.locator(qoe_1).click()
         #time.sleep(3)
         qoe1_vs = page.query_selector_all(qoe1_v)
-        qoe1_ov = qoe1_vs.nth(0)
-        qoe1_ev = qoe1_vs.nth(1)
+        qoe1_ov = qoe1_vs[0]
+        qoe1_ev = qoe1_vs[1]
         qoe1_odd_value = qoe1_ov.inner_text()
         qoe1_even_value = qoe1_ev.inner_text()
         qoe1_odds = {
