@@ -64,9 +64,11 @@ def test_web1():
         time.sleep(3)
         page.locator(qoe_1).click()
         time.sleep(3)
+        qoe1_odd_value = page.locator(qoe1_ov)
+        qoe1_even_value = page.locator(qoe1_ev)
         qoe1_odds = {
-            'Q1 Odd': qoe1_ov.inner_text(),
-            'Q1 Even': qoe1_ev.inner_text()
+            'Q1 Odd': qoe1_odd_value.inner_text(),
+            'Q1 Even': qoe1_even_value.inner_text()
         }
    
         print(qoe1_odds)
