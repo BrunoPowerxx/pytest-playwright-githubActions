@@ -79,10 +79,10 @@ def test_web1():
    #         'Q1 Odd': qoe1_odd_value,
    #         'Q1 Even': qoe1_even_value
    #     }
-        test = page.query_selector(testing)
+        tests = page.query_selector_all(testing)
         #for test in tests:
-        text = test.inner_text()
-        print(text)
+        test = tests[0].inner_text()
+        print(test)
         print("yeah motherfucker")
 
         browser.close()
