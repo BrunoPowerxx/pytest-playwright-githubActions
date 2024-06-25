@@ -24,9 +24,9 @@ qoe_1 = "//span[@data-translate-key='1StQuarterOddEven']"
 #qoe1_et = "//span[@data-translate-market='1st Quarter - Odd/Even' and @data-translate-key='Odd']"
 #qoe1_ev = "div.outcome-title.doublechance > span[data-translate-market='1st Quarter - Odd/Even'][data-translate-key='Even'] ~ div.outcome-pricedecimal"
 
-qoe1_ot = "//span[@data-translate-key='1StQuarterOddEven']//span[data-translate-key='Odd']"
-qoe1_v = "//span[@data-translate-key='1StQuarterOddEven']//div[@class='outcome-pricedecimal']"
-
+#qoe1_ot = "//span[@data-translate-key='1StQuarterOddEven']//span[data-translate-key='Odd']"
+#qoe1_v = "//span[@data-translate-key='1StQuarterOddEven']//div[@class='outcome-pricedecimal']"
+testing = "//div[@class='outcome-pricedecimal']"
 #qoe1_et = "//span[@data-translate-key='1StQuarterOddEven']/span[data-translate-key='Even']"
 #qoe1_ev = "//span[@data-translate-key='1StQuarterOddEven']//div[@class='outcome-pricedecimal'][2]"
 
@@ -70,16 +70,18 @@ def test_web1():
         time.sleep(3)
         #page.locator(qoe_1).click()
         #time.sleep(3)
-        qoe1_vs = page.query_selector_all(qoe1_v)
-        qoe1_ov = qoe1_vs[0]
-        qoe1_ev = qoe1_vs[1]
-        qoe1_odd_value = qoe1_ov.inner_text()
-        qoe1_even_value = qoe1_ev.inner_text()
-        qoe1_odds = {
-            'Q1 Odd': qoe1_odd_value,
-            'Q1 Even': qoe1_even_value
-        }
-        print(qoe1_odds)
-        print("yeah motherfucker!!")
+       # qoe1_vs = page.query_selector_all(qoe1_v)
+      #  qoe1_ov = qoe1_vs[0]
+      #  qoe1_ev = qoe1_vs[1]
+      #  qoe1_odd_value = qoe1_ov.inner_text()
+      #  qoe1_even_value = qoe1_ev.inner_text()
+     #   qoe1_odds = {
+   #         'Q1 Odd': qoe1_odd_value,
+   #         'Q1 Even': qoe1_even_value
+   #     }
+        tests = page.query_selector_all(testing)
+        for test in tests:
+            print(test)
+            print("yeah motherfucker")
 
         browser.close()
