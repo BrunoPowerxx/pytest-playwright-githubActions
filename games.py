@@ -1,18 +1,14 @@
-from playwright.sync_api import sync_playwright
-import time
+import PyPDF2
 
-def count_games():
-    with sync_playwright() as p:
-        browser = p.chromium.launch()
-        page = browser.new_page()
-        page.goto("https://supabets.co.za")
+# Open the PDF file
+with open('Northern Cape Government jobs.pdf', 'rb') as pdf_file:
+    pdf_reader = PyPDF2.PdfReader(pdf_file)
 
-        # Wait for the soccer tab to appear and click on it
-        page.wait_for_selector('div[title="SOCCER"]').click()
-        time.sleep(5)
-        # Wait for the subEvents to load and count the number of games
-        sub_events = page.query_selector_all('.subEvent')
-        num_games = len(sub_events)
-        print(f"Number of games found: {num_games}")
+# Extract text from all pages (modify the loop for specific pages)
+text = ''
+for page_num in range(len(pdf_reader.pages)):
+    page = pdf_reader.pages[page_num]
+    text += page.extractText()
 
-        browser.close()
+# Process or print the extracted text
+print(text)
