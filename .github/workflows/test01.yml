@@ -20,4 +20,13 @@ jobs:
       #- name: Install thefuzz
       #  run: pip install thefuzz
       - name: Run the PytTest script
-        run: pytest -vs
+        run: |
+          pytest -vs
+          # Example: move screenshots to a dedicated directory
+          mkdir -p artifacts/screenshots
+          mv screenshot.png artifacts/screenshots || true
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: screenshots
+          path: artifacts/screenshots
