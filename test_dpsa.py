@@ -5,7 +5,7 @@ from datetime import datetime
 from playwright.sync_api import sync_playwright
 
 timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
-screenshot_path = os.path.join(os.getcwd(), f"screenshot_{timestamp}.png")
+#screenshot_path = os.path.join(os.getcwd(), f"screenshot_{timestamp}.png")
 indeed = 'https://za.indeed.com/'
 
 def test_web1():
