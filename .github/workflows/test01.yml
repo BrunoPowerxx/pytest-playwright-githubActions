@@ -24,7 +24,7 @@ jobs:
           pytest -vs
           # Example: move screenshots to a dedicated directory
           mkdir -p artifacts/screenshots
-          mv screenshot.png artifacts/screenshots || true
+          mv *.png artifacts/screenshots || true
       - name: Upload Artifacts
         uses: actions/upload-artifact@v2
         with:
