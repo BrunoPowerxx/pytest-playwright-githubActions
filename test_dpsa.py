@@ -9,7 +9,7 @@ def test_web1():
     with sync_playwright() as p:
         browser = p.chromium.launch()
         page = browser.new_page()
-        page.goto("https://za.indeed.com/")
+        page.goto("https://supabets.co.za")
         page.screenshot(path='shot_one.png', full_page=True)
         # highlight and fill job title input
         page.screenshot(path='shot_two.png', full_page=True)
