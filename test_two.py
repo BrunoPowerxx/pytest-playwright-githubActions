@@ -79,6 +79,7 @@ def test_web1():
    #         'Q1 Odd': qoe1_odd_value,
    #         'Q1 Even': qoe1_even_value
    #     }
+        page.screenshot("screenshot.png"
         tests = page.query_selector_all(testing)
         #for test in tests:
         test = tests[0].inner_text()
