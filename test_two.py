@@ -55,18 +55,35 @@ def test_web1():
         page = browser.new_page()
         page.goto(bw_basket)
         time.sleep(3)
-        page.locator(sport).click()
+        page.screenshot(path='shot_one.png', full_page=True)
+        sport_tab = page.locator(sport)
+        sport_tab.highlight()
+        page.screenshot(path='shot_two.png', full_page=True)
+        sport_tab.click()
         time.sleep(3)
-        page.locator(basket).click()
+        basket_tab = page.locator(basket)
+        basket_tab.highlight()
+        page.screenshot(path='shot_three.png', full_page=True)
+        basket_tab.click()
         time.sleep(3)
-        page.locator(highlights).click()
+        hilites_tab = page.locator(highlights)
+        hilites_tab.highlight()
+        page.screenshot(path='shot_four.png', full_page=True)
+        hilites_tab.click()
         time.sleep(3)
+        page.screenshot(path='shot_five.png', full_page=True)
         events = page.locator(event)
+        events.highlight()
+        page.screenshot(path='shot_six.png', full_page=True)
         #quarters = []
         events.nth(0).click()
         
         time.sleep(3)
-        page.locator(qtrs).click()
+        page.screenshot(path='shot_seven.png', full_page=True)
+        qtrs_acc = page.locator(qtrs)
+        qtrs_acc.highlight()
+        page.screenshot(path='shot_eight.png', full_page=True)
+        qtrs_acc.click()
         time.sleep(3)
         #page.locator(qoe_1).click()
         #time.sleep(3)
@@ -79,11 +96,14 @@ def test_web1():
    #         'Q1 Odd': qoe1_odd_value,
    #         'Q1 Even': qoe1_even_value
    #     }
-        page.screenshot("screenshot.png"
-        tests = page.query_selector_all(testing)
+        page.screenshot(path='shot_nine.png', full_page=True)
+        tests = page.locator(testing)
+        tests.highlight()
         #for test in tests:
-        test = tests[0].inner_text()
-        print(test)
+        test = tests[0]
+        test.highlight()
+        test_text = test.inner_text()
+        print(test_text)
         print("yeah motherfucker")
 
         browser.close()
