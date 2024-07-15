@@ -15,18 +15,19 @@ event = "//label[@data-translate-type='event' and @data-translate-set='Basketbal
 
     #Basketball Highlights
 qtrs = "//span[@data-translate-key='Quarters']"
+
     #1st Quarter
 qoe_1 = "//span[@data-translate-key='1StQuarterOddEven']"
     #1st Quarter - Odd
-#qoe1_ot = "//span[@data-translate-market='1st Quarter - Odd/Even' and @data-translate-key='Odd']"
-#qoe1_ov = "div.outcome-title.doublechance > span[data-translate-market='1st Quarter - Odd/Even'][data-translate-key='Odd'] ~ div.outcome-pricedecimal"
+qoe1_ot = "//span[@data-translate-market='1st Quarter - Odd/Even' and @data-translate-key='Odd']"
+qoe1_ov = "div.outcome-title.doublechance > span[data-translate-market='1st Quarter - Odd/Even'][data-translate-key='Odd'] ~ div.outcome-pricedecimal"
     #1st Quarter  - Even
-#qoe1_et = "//span[@data-translate-market='1st Quarter - Odd/Even' and @data-translate-key='Odd']"
-#qoe1_ev = "div.outcome-title.doublechance > span[data-translate-market='1st Quarter - Odd/Even'][data-translate-key='Even'] ~ div.outcome-pricedecimal"
+qoe1_et = "//span[@data-translate-market='1st Quarter - Odd/Even' and @data-translate-key='Odd']"
+qoe1_ev = "div.outcome-title.doublechance > span[data-translate-market='1st Quarter - Odd/Even'][data-translate-key='Even'] ~ div.outcome-pricedecimal"
 
 #qoe1_ot = "//span[@data-translate-key='1StQuarterOddEven']//span[data-translate-key='Odd']"
-#qoe1_v = "//span[@data-translate-key='1StQuarterOddEven']//div[@class='outcome-pricedecimal']"
-testing = "//div[@class='outcome-pricedecimal']"
+#qoe1_ov = "//span[@data-translate-key='1StQuarterOddEven']//div[@class='outcome-pricedecimal']"
+# testing = "//div[@class='outcome-pricedecimal']"
 #qoe1_et = "//span[@data-translate-key='1StQuarterOddEven']/span[data-translate-key='Even']"
 #qoe1_ev = "//span[@data-translate-key='1StQuarterOddEven']//div[@class='outcome-pricedecimal'][2]"
 
@@ -72,11 +73,12 @@ def test_web1():
         hilites_tab.click()
         time.sleep(3)
         page.screenshot(path='shot_five.png', full_page=True)
-        events = page.locator(event)
+        event = page.locator('label').filter(data_translate_type='event',
+                                                      data_translate_set='Basketball')
         #     events.highlight()
         page.screenshot(path='shot_six.png', full_page=True)
-        #quarters = []
-        events.nth(0).click()
+        quarters = []
+        event.click()
         
         time.sleep(3)
         page.screenshot(path='shot_seven.png', full_page=True)
@@ -85,11 +87,10 @@ def test_web1():
         page.screenshot(path='shot_eight.png', full_page=True)
         qtrs_acc.click()
         time.sleep(3)
-        #page.locator(qoe_1).click()
-        #time.sleep(3)
-        # qoe1_vs = page.query_selector_all(qoe1_v)
-        #  qoe1_ov = qoe1_vs[0]
-        #  qoe1_ev = qoe1_vs[1]
+        page.locator(qoe_1)
+        time.sleep(3)
+        qoe1_ov = page.locator(qoe1_ot)
+        
         #  qoe1_odd_value = qoe1_ov.inner_text()
         #  qoe1_even_value = qoe1_ev.inner_text()
         #   qoe1_odds = {
