@@ -57,23 +57,23 @@ def test_web1():
         time.sleep(3)
         page.screenshot(path='shot_one.png', full_page=True)
         sport_tab = page.locator(sport)
-      #  sport_tab.highlight()
+        #  sport_tab.highlight()
         page.screenshot(path='shot_two.png', full_page=True)
         sport_tab.click()
         time.sleep(3)
         basket_tab = page.locator(basket)
-     #   basket_tab.highlight()
+        #   basket_tab.highlight()
         page.screenshot(path='shot_three.png', full_page=True)
         basket_tab.click()
         time.sleep(3)
         hilites_tab = page.locator(highlights)
-    #    hilites_tab.highlight()
+        #    hilites_tab.highlight()
         page.screenshot(path='shot_four.png', full_page=True)
         hilites_tab.click()
         time.sleep(3)
         page.screenshot(path='shot_five.png', full_page=True)
         events = page.locator(event)
-   #     events.highlight()
+        #     events.highlight()
         page.screenshot(path='shot_six.png', full_page=True)
         #quarters = []
         events.nth(0).click()
@@ -81,29 +81,29 @@ def test_web1():
         time.sleep(3)
         page.screenshot(path='shot_seven.png', full_page=True)
         qtrs_acc = page.locator(qtrs)
-   #     qtrs_acc.highlight()
+        #     qtrs_acc.highlight()
         page.screenshot(path='shot_eight.png', full_page=True)
         qtrs_acc.click()
         time.sleep(3)
         #page.locator(qoe_1).click()
         #time.sleep(3)
-       # qoe1_vs = page.query_selector_all(qoe1_v)
-      #  qoe1_ov = qoe1_vs[0]
-      #  qoe1_ev = qoe1_vs[1]
-      #  qoe1_odd_value = qoe1_ov.inner_text()
-      #  qoe1_even_value = qoe1_ev.inner_text()
-     #   qoe1_odds = {
-   #         'Q1 Odd': qoe1_odd_value,
-   #         'Q1 Even': qoe1_even_value
-   #     }
+        # qoe1_vs = page.query_selector_all(qoe1_v)
+        #  qoe1_ov = qoe1_vs[0]
+        #  qoe1_ev = qoe1_vs[1]
+        #  qoe1_odd_value = qoe1_ov.inner_text()
+        #  qoe1_even_value = qoe1_ev.inner_text()
+        #   qoe1_odds = {
+        #         'Q1 Odd': qoe1_odd_value,
+        #         'Q1 Even': qoe1_even_value
+        #     }
         page.screenshot(path='shot_nine.png', full_page=True)
-#        tests = page.locator(testing)
-  #      tests.highlight()
+        #        tests = page.locator(testing)
+        #      tests.highlight()
         #for test in tests:
-        test = tests[0]
-  #      test.highlight()
-        test_text = test.inner_text()
-        print(test_text)
+        #      test = tests[0]
+        #      test.highlight()
+        #      test_text = test.inner_text()
+        #      print(test_text)
         print("yeah motherfucker")
 
         browser.close()
