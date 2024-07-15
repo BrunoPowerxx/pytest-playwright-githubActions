@@ -97,7 +97,7 @@ def test_web1():
    #         'Q1 Even': qoe1_even_value
    #     }
         page.screenshot(path='shot_nine.png', full_page=True)
-        tests = page.locator(testing)
+#        tests = page.locator(testing)
   #      tests.highlight()
         #for test in tests:
         test = tests[0]
