@@ -3,27 +3,27 @@ import time
 
 #General
 bw_basket = "https://betway.co.za/sport/basketball"
-sport = "//div[@id='navbar_sport']"
+#sport = "//div[@id='navbar_sport']"
 
 #Soccer
-soccer = "//p[@data-translate-key='Soccer']"
+#soccer = "//p[@data-translate-key='Soccer']"
 
 #Basketball
-basket = "//p[@data-translate-key='Basketball']"
-highlights = "//button[@value='highlights']"
-event = "//label[@data-translate-type='event' and @data-translate-set='Basketball']"
+#basket = "//p[@data-translate-key='Basketball']"
+#highlights = "//button[@value='highlights']"
+#event = "//label[@data-translate-type='event' and @data-translate-set='Basketball']"
 
     #Basketball Highlights
-qtrs = "//span[@data-translate-key='Quarters']"
+#qtrs = "//span[@data-translate-key='Quarters']"
 
     #1st Quarter
-qoe_1 = "//span[@data-translate-key='1StQuarterOddEven']"
+#qoe_1 = "//span[@data-translate-key='1StQuarterOddEven']"
     #1st Quarter - Odd
-qoe1_ot = "//span[@data-translate-market='1st Quarter - Odd/Even' and @data-translate-key='Odd']"
-qoe1_ov = "div.outcome-title.doublechance > span[data-translate-market='1st Quarter - Odd/Even'][data-translate-key='Odd'] ~ div.outcome-pricedecimal"
+#qoe1_ot = "//span[@data-translate-market='1st Quarter - Odd/Even' and @data-translate-key='Odd']"
+#qoe1_ov = "div.outcome-title.doublechance > span[data-translate-market='1st Quarter - Odd/Even'][data-translate-key='Odd'] ~ div.outcome-pricedecimal"
     #1st Quarter  - Even
-qoe1_et = "//span[@data-translate-market='1st Quarter - Odd/Even' and @data-translate-key='Odd']"
-qoe1_ev = "div.outcome-title.doublechance > span[data-translate-market='1st Quarter - Odd/Even'][data-translate-key='Even'] ~ div.outcome-pricedecimal"
+#qoe1_et = "//span[@data-translate-market='1st Quarter - Odd/Even' and @data-translate-key='Odd']"
+#qoe1_ev = "div.outcome-title.doublechance > span[data-translate-market='1st Quarter - Odd/Even'][data-translate-key='Even'] ~ div.outcome-pricedecimal"
 
 #qoe1_ot = "//span[@data-translate-key='1StQuarterOddEven']//span[data-translate-key='Odd']"
 #qoe1_ov = "//span[@data-translate-key='1StQuarterOddEven']//div[@class='outcome-pricedecimal']"
@@ -56,55 +56,21 @@ def test_web1():
         page = browser.new_page()
         page.goto(bw_basket)
         time.sleep(3)
-        page.screenshot(path='shot_one.png', full_page=True)
-        sport_tab = page.locator(sport)
-        #  sport_tab.highlight()
-        page.screenshot(path='shot_two.png', full_page=True)
-        sport_tab.click()
-        time.sleep(3)
-        basket_tab = page.locator(basket)
-        #   basket_tab.highlight()
-        page.screenshot(path='shot_three.png', full_page=True)
-        basket_tab.click()
-        time.sleep(3)
-        hilites_tab = page.locator(highlights)
-        #    hilites_tab.highlight()
-        page.screenshot(path='shot_four.png', full_page=True)
-        hilites_tab.click()
-        time.sleep(3)
-        page.screenshot(path='shot_five.png', full_page=True)
-        event = page.locator('label').filter(data_translate_type='event',
-                                                      data_translate_set='Basketball')
-        #     events.highlight()
-        page.screenshot(path='shot_six.png', full_page=True)
+        page.screenshot(path='shot1.png', full_page=True)
+        event = page.locator('label').filter(data_translate_type='event', data_translate_set='Basketball')
         quarters = []
         event.click()
-        
         time.sleep(3)
-        page.screenshot(path='shot_seven.png', full_page=True)
-        qtrs_acc = page.locator(qtrs)
-        #     qtrs_acc.highlight()
-        page.screenshot(path='shot_eight.png', full_page=True)
-        qtrs_acc.click()
+        page.screenshot(path='shot2.png', full_page=True)
+        qtrs = page.locator('span').filter(data_translate_key='Quarters')
+        qtrs.click()
+        page.screenshot(path='shot3.png', full_page=True)
         time.sleep(3)
-        page.locator(qoe_1)
-        time.sleep(3)
-        qoe1_ov = page.locator(qoe1_ot)
-        
-        #  qoe1_odd_value = qoe1_ov.inner_text()
-        #  qoe1_even_value = qoe1_ev.inner_text()
-        #   qoe1_odds = {
-        #         'Q1 Odd': qoe1_odd_value,
-        #         'Q1 Even': qoe1_even_value
-        #     }
-        page.screenshot(path='shot_nine.png', full_page=True)
-        #        tests = page.locator(testing)
-        #      tests.highlight()
-        #for test in tests:
-        #      test = tests[0]
-        #      test.highlight()
-        #      test_text = test.inner_text()
-        #      print(test_text)
-        print("yeah motherfucker")
-
+        qoe1 = page.locator('span').filter(data_translate_key='1StQuarterOddEven')
+        qoe1.click()
+        page.screenshot(path='shot4.png', full_page=True)
+        ov_ch_1 = page.locator('div').filter(class='outcome-pricedecimal')
+        ov_1 = page.get_by_role('span').filter(has=ov_ch_1)
+        odd_value = ov_1.inner_text()
+        print(odd_value)
         browser.close()
