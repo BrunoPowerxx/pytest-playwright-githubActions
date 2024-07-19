@@ -69,7 +69,7 @@ def test_web1():
         qoe1 = page.locator('span').filter(data_translate_key='1StQuarterOddEven')
         qoe1.click()
         page.screenshot(path='shot4.png', full_page=True)
-        ov_ch_1 = page.locator('div').filter(class='outcome-pricedecimal')
+        ov_ch_1 = page.locator('div').filter(class_name='outcome-pricedecimal')
         ov_1 = page.get_by_role('span').filter(has=ov_ch_1)
         odd_value = ov_1.inner_text()
         print(odd_value)
