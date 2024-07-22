@@ -11,7 +11,7 @@ def test_web1():
         page.goto("https://betway.co.za/sport/basketball")
         time.sleep(3)
         page.screenshot(path='shot1.png', full_page=True)
-        events = page.query_selector_all("label[data-translate-type='event' and data-translate-set='Basketball']")
+        events = page.query_selector_all("label[data_translate_type='event' and data_translate_set='Basketball']")
         quarters = []
         for event in events:
             event.click()
