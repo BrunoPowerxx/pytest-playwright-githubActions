@@ -3,16 +3,16 @@ from selectors import *
 import time
 
 
-        # Wait for all elements matching 'div.row.eventRow'
+# Wait for all elements matching 'div.row.eventRow'
         
 
-        # Get all elements matching 'div.row.eventRow'
+# Get all elements matching 'div.row.eventRow'
         
 
-        # Process each event element
-        for element in event_elements:
-            # Example: Extract text from each event element
-            text = element.text_content()
+# Process each event element
+#for element in event_elements:
+# Example: Extract text from each event element
+#text = element.text_content()
 def test_web1():
     with sync_playwright() as p:
         browser = p.chromium.launch()
