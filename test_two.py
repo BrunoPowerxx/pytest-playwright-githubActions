@@ -20,7 +20,7 @@ def test_web1():
         page.goto("https://betway.co.za/sport/basketball")
         time.sleep(3)
         page.screenshot(path='shot1.png', full_page=True)
-        event = page.wait_for_selector('div.league-group-event')
+        event = page.wait_for_selector('div.league-group-items label.ellips.theOtherFont'')
         event.click()
         page.screenshot(path='shot2.png', full_page=True)
         quarters = []
