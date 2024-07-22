@@ -15,11 +15,11 @@ def test_web1():
         quarters = []
         for event in events:
             event.click()
-            qtrs = page.wait_for_selector('span[data-translate-key='Quarters']')
+            qtrs = page.wait_for_selector('span[data-translate-key="Quarters"]')
             qtrs.click()
             time.sleep(3)
             page.screenshot(path='shot2.png', full_page=True)
-            qoe1 = page.wait_for_selector('span[data-translate-key='1StQuarterOddEven']')
+            qoe1 = page.wait_for_selector('span[data-translate-key="1StQuarterOddEven"]')
             qoe1.click()
             page.screenshot(path='shot4.png', full_page=True)
             
