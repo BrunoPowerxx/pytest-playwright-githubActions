@@ -20,19 +20,9 @@ def test_web1():
         page.goto("https://betway.co.za/sport/basketball")
         time.sleep(3)
         page.screenshot(path='shot1.png', full_page=True)
-        page.wait_for_selector('div.row.eventRow')
-        events = page.query_selector_all('div.row.eventRow')
+        event = page.wait_for_selector('div[class="row eventRow"]')
+        event.click()
+        page.screenshot(path='shot2.png', full_page=True)
         quarters = []
-        for event in events:
-            event.click()
-            print("event")
-            #qtrs = page.wait_for_selector('span[data-translate-key="Quarters"]')
-            #qtrs.click()
-            #time.sleep(3)
-            #page.screenshot(path='shot2.png', full_page=True)
-            #qoe1 = page.wait_for_selector('span[data-translate-key="1StQuarterOddEven"]')
-            #qoe1.click()
-            #page.screenshot(path='shot4.png', full_page=True)
-            
             
         browser.close()
