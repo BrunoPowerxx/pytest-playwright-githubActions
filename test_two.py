@@ -22,6 +22,7 @@ def test_web1():
         page.screenshot(path='shot1.png', full_page=True)
         event = page.wait_for_selector('div.league-group-items label.ellips.theOtherFont')
         event.click()
+        time.sleep(3)
         page.screenshot(path='shot2.png', full_page=True)
         quarters = []
             
