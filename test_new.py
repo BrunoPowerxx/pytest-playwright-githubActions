@@ -33,7 +33,7 @@ bw_yv = page.wait_for_selector("div[data-markettitle='Both Teams To Score']:righ
 sb_nt = page.wait_for_selector("div", has_text="No (NG)")
 sb_nv = page.wait_for_selector("div.oddValue:right-of(sb_nt)")
 bw_nt = page.wait_for_selector("div[data-markettitle='Both Teams To Score'] span[data-translate-key='No']")
-bw_nv = page.wait_for_selector("div[data-markettitle="Both Teams To Score"]:right-of(bw_nt)")
+bw_nv = page.wait_for_selector("div[data-markettitle='Both Teams To Score']:right-of(bw_nt)")
 
 # takes inner text of odds as input
 # calculates odds %% distribution
