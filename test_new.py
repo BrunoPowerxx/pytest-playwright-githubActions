@@ -7,8 +7,8 @@ bw_url = "https://betway.co.za"
 sb_url = "https://supabets.co.za"
 
 bws_hl = "button#synapse_highlights"
-sb_tl = "a[data-istestfield='tabs-topleagues']"
-
+#sb_tl = "a[data-istestfield='tabs-topleagues']"
+sb_tl = "div.TopLeagues"
 sb_site = "Supabets"
 bw_site = "Betway"
 
