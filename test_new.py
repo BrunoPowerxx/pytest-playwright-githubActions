@@ -22,14 +22,14 @@ sb_match = "div.TopLeagues div.plr_1.ng-binding"
 sb_away = "div.TopLeagues div.plr_2.ng-binding"
 
 #bw_event =
-sb_yt = "div", has_text="Yes (GG)"
-sb_yv = "div.oddValue:right-of(sb_yt)"
+#sb_yt = ("div", has_text="Yes (GG)")
+sb_yv = "div.oddValue:right-of(div[has_text='Yes (GG)'])"
 
 bw_yt = "div[data-markettitle='Both Teams To Score'] span[data-translate-key='Yes']"
 bw_yv = "div[data-markettitle='Both Teams To Score']:right-of(bw_yt)"
 
-sb_nt = "div", has_text="No (NG)"
-sb_nv = "div.oddValue:right-of(sb_nt)"
+#sb_nt = ("div", has_text="No (NG)")
+sb_nv = "div.oddValue:right-of(div[has_text='No (NG)'])"
 
 bw_nt = "div[data-markettitle='Both Teams To Score'] span[data-translate-key='No']"
 bw_nv = "div[data-markettitle='Both Teams To Score']:right-of(bw_nt)"
