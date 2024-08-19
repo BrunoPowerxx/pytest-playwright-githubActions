@@ -65,6 +65,6 @@ def test_sb():
             sb.append(game)
             print(game)
             print("fml")
-        return sb
+        
 
         browser.close()
