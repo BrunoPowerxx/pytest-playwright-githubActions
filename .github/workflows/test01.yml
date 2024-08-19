@@ -22,11 +22,17 @@ jobs:
       - name: Run the PytTest script
         run: |
           pytest -vs
-          # Example: move screenshots to a dedicated directory
+          # Create directories for artifacts
           mkdir -p artifacts/screenshots
+          mkdir -p artifacts/logs
+          # Move screenshots
           mv *.png artifacts/screenshots || true
+          # Move output.txt
+          mv output.txt artifacts/logs || true
       - name: Upload Artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: screenshots
-          path: artifacts/screenshots
+          name: test-artifacts
+          path: |
+            artifacts/screenshots
+            artifacts/logs/output.txt
