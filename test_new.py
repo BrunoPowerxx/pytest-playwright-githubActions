@@ -62,8 +62,9 @@ def test_sb():
             yes_val = page.wait_for_selector(sb_yv).inner_text()
             no_val = page.wait_for_selector(sb_nv).inner_text()
             game = Event(sb_site, yes_val, no_val)
-            sb.append(fixture)
-            print(fixture)
+            sb.append(game)
+            print(game)
+            print("fml")
         return sb
 
         browser.close()
