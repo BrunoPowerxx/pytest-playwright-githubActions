@@ -46,19 +46,28 @@ def test_sb():
         browser = p.chromium.launch()
         page = browser.new_page()
         page.goto(sb_url)
-        #page.screenshot(path='shot_one.png', full_page=True)
+        page.screenshot(path='shot_one.png', full_page=True)
         page.wait_for_selector(sb_sport).click()
         #sb_live.click()
         page.wait_for_selector(sb_soccer).click()
         #page.wait_for_selector(sb_tl).click()
+        page.screenshot(path='shot_two.png', full_page=True)
         #page.wait_for_selector(sb_match)
         fixtures = page.query_selector_all(sb_match)
         sb = []
         with open('output.txt', 'w') as file:
-            for fixture in fixtures:
+            for index, fixture in enumerate(fixtures):
                 fixture.click()
+                
+                # Generate a unique filename for the screenshot
+                screenshot_filename = f'shot_{index + 1}.png'
+                page.screenshot(path=screenshot_filename, full_page=True)
+                
+                # Wait and retrieve values
                 yes_val = page.wait_for_selector(sb_yv).inner_text()
                 no_val = page.wait_for_selector(sb_nv).inner_text()
+                
+                # Create namedtuple and append to list
                 game = Event(sb_site, yes_val, no_val)
                 sb.append(game)
                 
@@ -68,5 +77,4 @@ def test_sb():
                 file.write(f'No Value: {game.NG}\n')
                 file.write('\n')  # Blank line for separation
         
-
         browser.close()
