@@ -15,9 +15,10 @@ bw_soccer = page.wait_for_selector("li[data-translate-key="Soccer"]")
 
 bw_match = page.wait_for_selector("div.row.eventRow label.ellips.theOtherFont")
 sb_match = page.wait_for_selector("div.TopLeagues div.plr_1.ng-binding")
+sb_away = page.wait_for_selector("div.TopLeagues div.plr_2.ng-binding")
 
-#sb_event = ""
-#bw_event = ""
+
+bw_event =
 
 sb_yt = page.wait_for_selector("div", has_text="Yes (GG)")
 sb_yv = page.wait_for_selector("div.oddValue:right-of(sb_yt)")
