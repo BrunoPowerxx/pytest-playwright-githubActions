@@ -7,7 +7,7 @@ bw_url = "https://betway.co.za"
 sb_url = "https://supabets.co.za"
 
 bws_hl = page.wait_for_selector("button#synapse_highlights")
-sb_tl = page.wait_for_selector("a[data-istestfiled="tabs-topleagues"]")
+sb_tl = page.wait_for_selector("a[data-istestfield="tabs-topleagues"]")
 
 sb_site = "Supabets"
 bw_site = "Betway"
