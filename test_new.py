@@ -1,4 +1,5 @@
 from playwright.sync_api import sync_playwright
+from collections import namedtuple
 #from selectors import *
 import time
 
