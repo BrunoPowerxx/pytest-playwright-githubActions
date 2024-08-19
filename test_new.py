@@ -19,8 +19,8 @@ sb_soccer = "div[title='SOCCER']"
 bw_soccer = "li[data-translate-key='Soccer']"
 
 bw_match = "div.row.eventRow label.ellips.theOtherFont"
-sb_match = "div.plr_1.ng-binding"
-sb_away = "div.plr_2.ng-binding"
+sb_match = "plr_1.ng-binding"
+sb_away = "plr_2.ng-binding"
 
 #bw_event =
 #sb_yt = ("div", has_text="Yes (GG)")
@@ -51,7 +51,7 @@ def test_sb():
         #sb_live.click()
         page.wait_for_selector(sb_soccer).click()
         #page.wait_for_selector(sb_tl).click()
-        page.wait_for_selector(sb_match)
+        #page.wait_for_selector(sb_match)
         fixtures = page.query_selector_all(sb_match)
         sb = []
         for fixture in fixtures:           
