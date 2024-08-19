@@ -51,7 +51,8 @@ def test_sb():
         #sb_live.click()
         page.wait_for_selector(sb_soccer).click()
         #page.wait_for_selector(sb_tl).click()
-        fixtures = page.wait_for_selector(sb_match).query_selector_all()
+        page.wait_for_selector(sb_match)
+        fixtures = page.query_selector_all(sb_match)
         sb = []
         for fixture in fixtures:           
             fixture.click()
