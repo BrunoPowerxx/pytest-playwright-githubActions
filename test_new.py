@@ -54,17 +54,19 @@ def test_sb():
         #page.wait_for_selector(sb_match)
         fixtures = page.query_selector_all(sb_match)
         sb = []
-        for fixture in fixtures:           
-            fixture.click()
-            # assert sb_is_live
-            #sb_qtrs.click()
-            #qtrs_sb.click()
-            yes_val = page.wait_for_selector(sb_yv).inner_text()
-            no_val = page.wait_for_selector(sb_nv).inner_text()
-            game = Event(sb_site, yes_val, no_val)
-            sb.append(game)
-            print(game)
-            print("fml")
+        with open('output.txt', 'w') as file:
+            for fixture in fixtures:
+                fixture.click()
+                yes_val = page.wait_for_selector(sb_yv).inner_text()
+                no_val = page.wait_for_selector(sb_nv).inner_text()
+                game = Event(sb_site, yes_val, no_val)
+                sb.append(game)
+                
+                # Write the game namedtuple attributes to the file
+                file.write(f'Site: {game.site}\n')
+                file.write(f'Yes Value: {game.GG}\n')
+                file.write(f'No Value: {game.NG}\n')
+                file.write('\n')  # Blank line for separation
         
 
         browser.close()
