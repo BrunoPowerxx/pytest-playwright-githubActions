@@ -48,6 +48,7 @@ def test_sb():
         page.goto(sb_url)
         page.screenshot(path='shot_one.png', full_page=True)
         #page.wait_for_selector(sb_sport).click()
+        time.sleep(3)
         #sb_live.click()
         #page.wait_for_selector(sb_soccer).click()
         #page.wait_for_selector(sb_tl).click()
