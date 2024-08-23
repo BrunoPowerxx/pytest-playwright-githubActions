@@ -16,10 +16,10 @@ def test_supabets():
         sb_match = "plr_1.ng-binding"
 
         # Wait for the first element that matches the selector
-        first_element = page.locator(sb_match).first()
-        first_element.wait_for()
+        page.locator(sb_match).wait_for()
 
         # Get the text content of the first matching element
+        first_element = page.locator(sb_match).nth(0)
         text_content = first_element.text_content()
         print("Text Content:", text_content)
 
