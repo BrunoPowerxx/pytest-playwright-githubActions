@@ -1,4 +1,4 @@
-url = "https://www.supabets.co.za"
+url = "https://www.supabets.co.za/sport"
 top_leagues = "//li/a[contains(text(), 'Top Leagues')]"
 home_team = "//a/div[@class='plr_1 ng-binding']"
 away_team = "//a/div[@class='plr_2 ng-binding']"
