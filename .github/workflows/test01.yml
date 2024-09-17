@@ -14,9 +14,7 @@ jobs:
         with:
           python-version: '3.9'
       
-      # Create a requirements.txt file
-      - name: Create requirements.txt
-        run: echo "requests" > requirements.txt
+
       
       # Cache Python dependencies
       - name: Cache Python packages
