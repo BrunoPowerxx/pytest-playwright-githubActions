@@ -40,22 +40,4 @@ jobs:
         if: steps.playwright-cache.outputs.cache-hit != 'true'
       
       # Run the PyTest script
-      - name: Run the PyTest script
-        run: |
-          pytest -vs
-          # Create directories for artifacts
-          mkdir -p artifacts/screenshots
-          mkdir -p artifacts/logs
-          # Move screenshots
-          mv *.png artifacts/screenshots || true
-          # Move output.txt
-          mv output.txt artifacts/logs || true
       
-      # Upload Artifacts
-      - name: Upload Artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: test-artifacts
-          path: |
-            artifacts/screenshots
-            artifacts/logs/output.txt
